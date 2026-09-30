@@ -1,0 +1,11 @@
+export type Intent = 'DATING' | 'FRIENDSHIP' | 'NEW_IN_TOWN';
+export type Choice = 'FRIENDSHIP' | 'DATING' | 'EITHER' | 'PASS';
+export type UserRow = { id: string; email: string | null; status: 'ONBOARDING'|'ACTIVE'|'SUSPENDED'|'BANNED'|'DELETED'; verificationStatus: 'NOT_STARTED'|'PENDING'|'APPROVED'|'REJECTED'|'EXPIRED'; verificationGesture: string|null; expoPushToken: string|null; role: 'MEMBER'|'MODERATOR'|'ADMIN' };
+export type Profile = { userId: string; displayName: string; bio: string|null; interests: string[]; languages: string[] };
+export type Catchment = { id: string; name: string; cityName: string; countryCode: string; timezone: string; currency: string };
+export type EventCard = { id:string; title:string; format:string; tags:string[]; startsAt:string; endsAt:string; maxAttendees:number; bookedCount:number; costMinor:number; platformFeeMinor:number; currency:string; catchmentName:string; areaLabel:string; hostName:string; myBookingStatus?:string|null };
+export type EventDetail = EventCard & { description:string; minAttendees:number; status:string; alcoholPolicy:string; languages:string[]; dietaryOptions:string[]; address?:string|null; checkInCode?:string|null; emergencyNumber:string; hostUserId:string; hostBio?:string|null; isHost:boolean; myBooking?:{status:string;attendance:string;waitlistPosition?:number}|null; matchingStatus:string; cancelledReason?:string|null };
+export type Plan = { id:string; title:string; startsAt:string; endsAt:string; status:string; matchingStatus:string; areaLabel:string; isHost:boolean; bookingStatus?:string; attendance?:string };
+export type Match = { id:string; type:'FRIENDSHIP'|'DATING'; createdAt:string; lastMessageAt?:string|null; eventTitle:string; otherUserId:string; otherName:string; otherPhotoKey?:string|null };
+export type ChatMessage = { id:string; senderId:string; body:string; createdAt:string; readAt?:string|null };
+export type EventMessage = { id:string; senderId:string|null; kind:'CHAT'|'ANNOUNCEMENT'|'SYSTEM'; body:string; createdAt:string };

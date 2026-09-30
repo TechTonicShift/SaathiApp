@@ -1,0 +1,5 @@
+import { Pressable, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import type { EventCard as E } from '@/types'; import { label,money,when } from '@/lib/format';
+export function EventCard({event}:{event:E}){const left=event.maxAttendees-event.bookedCount;return <Pressable onPress={()=>router.push({pathname:'/event/[id]',params:{id:event.id}})} className="overflow-hidden rounded-3xl border border-line bg-white"><View className="h-28 justify-end bg-sage p-5"><Text className="text-xs font-bold uppercase tracking-widest text-muted">{label(event.format)}</Text><Text className="mt-1 text-2xl font-bold text-ink">{event.title}</Text></View><View className="gap-2 p-5"><Text className="font-semibold text-coral">{when(event.startsAt)}</Text><Text className="text-muted">{event.areaLabel} · Hosted by {event.hostName}</Text><View className="flex-row items-center justify-between"><Text className="font-semibold text-ink">{money(event.costMinor+event.platformFeeMinor,event.currency)}</Text><Text className="text-muted">{left>0?`${left} spots left`:'Waitlist'}</Text></View></View></Pressable>}
+

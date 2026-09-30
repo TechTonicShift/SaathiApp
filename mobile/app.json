@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Saath",
+    "slug": "saath",
+    "version": "1.0.0",
+    "scheme": "saath",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      ["expo-image-picker", { "photosPermission": "Saath uses your photos for your profile.", "cameraPermission": "Saath uses your camera for your verification selfie." }],
+      ["expo-notifications", { "color": "#E85D3F" }]
+    ],
+    "experiments": { "typedRoutes": true },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.saath.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "app.saath.mobile"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

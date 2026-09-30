@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+
+# env
+.env
+.env*.local
+
+# build / caches
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+
+# macOS
+.DS_Store
